@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <>
          <div className='header'>
-          <span>Store</span>
+          <span>FAKE STORE</span>
           <NavBar className='nav-bar' />
          </div>
          
