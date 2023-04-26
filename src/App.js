@@ -28,7 +28,7 @@ export default function App() {
      <Header />
      <Routes>
      <Route  path='/home' element={<Home />}/>
-     <Route  path='/shop' element={<Shop />} />
+     <Route  path='/shop' element={<Shop inventory={inventory} setInventory={setInventory} />} />
      <Route  path='/cart' element={<Cart />}/>
      </Routes>
      </BrowserRouter>
