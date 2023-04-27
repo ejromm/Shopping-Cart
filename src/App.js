@@ -31,8 +31,8 @@ export default function App() {
      <Route  path='/home' element={<Home />}/>
      <Route  path='/shop' element={<Shop inventory={inventory} setInventory={setInventory} />} />
      <Route  path='/cart' element={<Cart />}/>
-     {inventory.map((item, i) => {
-        return <Route path={'/shop/'+item.title} element={<ShopItem item={item} /> } key={uniqid()} />
+     {inventory.map((item) => {
+        return (<Route path={'/shop/'+item.title} element={<ShopItem item={item} /> } key={uniqid()} />)
      })}
      </Routes>
      </BrowserRouter>
