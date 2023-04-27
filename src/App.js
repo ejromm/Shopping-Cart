@@ -4,7 +4,8 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Cart from './pages/Cart';
-
+import ShopItem from './pages/ShopItem';
+import uniqid from 'uniqid';
 export default function App() {
   const [inventory, setInventory] = useState([]);
   
@@ -30,6 +31,9 @@ export default function App() {
      <Route  path='/home' element={<Home />}/>
      <Route  path='/shop' element={<Shop inventory={inventory} setInventory={setInventory} />} />
      <Route  path='/cart' element={<Cart />}/>
+     {inventory.map((item, i) => {
+        return <Route path={'/shop/'+item.title} element={<ShopItem item={item} /> } key={uniqid()} />
+     })}
      </Routes>
      </BrowserRouter>
      </>

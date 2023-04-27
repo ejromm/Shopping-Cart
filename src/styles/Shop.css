@@ -27,7 +27,11 @@
     object-fit: contain;
     max-width: 80%;
     margin-bottom: 5%;
+    transition: transform .7s;
 }
+#item-img:hover {
+    transform: scale(.9); 
+  }
 #item-name {
     color: black;
     height: 15%;
