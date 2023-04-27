@@ -14,11 +14,11 @@ export default function Shop({inventory, setInventory}) {
        
         //append all whole stars
         for(let i = rating ; i >= 1; i--) {
-            output.push(<FaStar style={{color: 'gold'}} />)
+            output.push(<FaStar style={{color: 'black'}} />)
             rating--; 
             console.log('rating --', rating)
         }
-        if (rating === .5) output.push(<FaStarHalf style={{color: "gold"}} />)
+        if (rating === .5) output.push(<FaStarHalf style={{color: "black"}} />)
             
 
             return output;
@@ -32,12 +32,13 @@ export default function Shop({inventory, setInventory}) {
                     return (
                         <div id='shop-item'>
                             <img id='item-img' alt={item.title} src={item.image}/>
-                            <span id='item-name'>{item.title.replace(/\s+/g,' ').trim()}</span>
-                            <span id='item-rating'>{getStars(item.rating.rate)}</span>
                             <div className='item-price-cart'>
-                                <span id='item-price'>${item.price}</span>
-                                <button id='add-to-cart'>ADD TO CART</button>
+                                <span id='item-price'>${item.price}</span>  
+                                <span id='item-rating'>{getStars(item.rating.rate)}</span>
                             </div>
+                            <span id='item-name'>{item.title.replace(/\s+/g,' ').trim()}</span>
+                           
+                            
                         </div>
                     )
                 })}

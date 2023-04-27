@@ -1,26 +1,25 @@
 
 .store {
    
-    min-height: 500vh;
+    min-height: 300vh;
     width: 100vw;
     display: grid;
     grid-template-columns: 25vw 25vw 25vw;
-    grid-template-rows: 60vh 60vh 60vh 60vh 60vh 60vh 60vh;
+    grid-template-rows: 45vh 45vh 45vh 45vh 45vh 45vh 45vh;
     justify-content: center;
-    padding-top: 5%;
-    column-gap: 3%;
-    row-gap: 1%;
-    background-color: lightgray;
+    padding-top: 2%;
+   
+   
 }
 #shop-item {
     width: 25vw;
-    height: 60vh;
+    height: 45vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 2%;
-    background-color: white;
+   
     border-radius: 5px;
 }
 #item-img {
@@ -31,27 +30,26 @@
 }
 #item-name {
     color: black;
-    height: 20%;
+    height: 15%;
     width: 90%;
     font-size: 1rem;
     letter-spacing: .5px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     font-family: 'Roboto';
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #item-rating{
     color: black;
     height: 10%;
-    width: 90%;
+    width: 40%;
    
     font-size: 1rem;
     display: flex;
     justify-content: flex-end;
-    font-style: italic;
-    font-family: 'Montserrat';
+  
 }
 
 .item-price-cart{
@@ -72,11 +70,11 @@
     color: black;
     height: 100%;
     width: 40%;
-    font-size: 1.5rem;
+    font-size: 1rem;
    
     display: flex;
     justify-content: flex-start;
-    font-weight: 500;
+    font-weight: 300;
     font-family: 'Lato';
     
 
