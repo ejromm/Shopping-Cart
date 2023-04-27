@@ -25,10 +25,13 @@ export default function ShopCard({ item }) {
          const dec = num.split('.')[1]
         const len = dec && dec.length > 2 ? dec.length : 2
         return Number(num).toFixed(len)
-    }
 
+    }
+        const name = item.title.replace(/[^A-Za-z0-9]/g, ' ')
+        console.log('id in shopcard', item.id)
+        console.log('name in shopcard', name.replace(/\s+/g, '-').trim())
     return (
-        <Link id='shop-item' to={'/shop/'+item.title} page={item.title} >
+        <Link id='shop-item' to={`/shop/${name.replace(/\s+/g, '-').trim()}`} page={item.title} >
         <img id='item-img' alt={item.title} src={item.image} />
         <div className='item-price-cart' >
         <span  id='item-price'>${addZeroes(String(item.price))}</span>  
