@@ -44,6 +44,9 @@
     font-family: 'Roboto';
     font-weight: 400;
 }
+#item-name:hover {
+    color: darkorange;
+}
 
 #item-rating{
     color: black;
@@ -84,15 +87,7 @@
 
 }
 
-#add-to-cart {
-    border: none;
-    background-color: black;
-    color: white;
-    height: 7vh;
-    width: 9vw;
-    border-radius: 25px;
-    font-family: 'Montserrat';
-}
+
 
 #add-to-cart:hover {
     border: .5px solid black;

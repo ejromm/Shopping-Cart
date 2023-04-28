@@ -21,14 +21,14 @@
 
 #shop-item-img {
    
-    width: 90%;
-    max-height: 70%;
+    max-width: 90%;
+    height: 100%;
     object-fit: contain;
     
 }
 #shop-item-title {
    
-    height: 40%;
+    height: 25%;
     width: 100%;
     color: black;
     font-size: 1.5rem;
@@ -43,13 +43,16 @@
     aspect-ratio: 1 / 1;
     width: 45%;
     max-height: 75%;
-     
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
    
 }
 
 #shop-item-price {
      color:black;
-     
      height: 12%;
      width: 100%;
      display: flex;
@@ -101,4 +104,13 @@
     align-items: flex-start;
     margin-top: 2%;
    
+}
+#add-to-cart {
+    border: none;
+    background-color: black;
+    color: white;
+    height: 6vh;
+    width: 9vw;
+    border-radius: 25px;
+    font-family: 'Montserrat';
 }

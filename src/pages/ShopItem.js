@@ -19,6 +19,7 @@ export default function ShopItem({ item }) {
               <span  id='shop-item-price'>${AddZeroes(String(item.price))}</span>  
               <span  id='shop-item-category'>Category:<i>{String(item.category)[0].toUpperCase() + String(item.category).slice(1)}</i></span>
               <span  id='shop-item-description'>{item.description}</span>
+              <button id='add-to-cart'>ADD TO CART</button>
           </div>
 
 
