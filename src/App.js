@@ -34,7 +34,7 @@ export default function App() {
            const name = item.title.replace(/[^A-Za-z0-9]/g, ' ')
           console.log('id in app', item.id);
           console.log('name in app', name.replace(/\s+/g, '-').trim())
-           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item} /> } key={uniqid()} />)
+           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item}   /> } key={uniqid()} />)
          })}
     
      <Route  path='/cart' element={<Cart />}/>
