@@ -8,6 +8,7 @@ import ShopItem from './pages/ShopItem';
 import uniqid from 'uniqid';
 export default function App() {
   const [inventory, setInventory] = useState([]);
+  const [cartClicked, setcartClicked] = useState(false);
   
   useEffect(() => {
     const retreiveInventory = async () => {
@@ -26,7 +27,8 @@ export default function App() {
     <>
     
      <BrowserRouter>
-     <Header />
+     {cartClicked ? <Cart /> : null}
+     <Header cartClicked={cartClicked} setcartClicked={setcartClicked} />
      <Routes>
      <Route  path='/home' element={<Home />}/>
      <Route  path='/shop' element={<Shop inventory={inventory} setInventory={setInventory} />} />
@@ -37,7 +39,7 @@ export default function App() {
            return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item}   /> } key={uniqid()} />)
          })}
     
-     <Route  path='/cart' element={<Cart />}/>
+     
     
      </Routes>
      </BrowserRouter>
