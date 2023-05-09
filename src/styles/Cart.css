@@ -67,11 +67,13 @@
     width: 100%;
     padding-left: 15%;
     align-items: center;
+    border: 1px solid black;
 }
 #cart-item-img {
     max-height: 80%;
     object-fit: contain;
     width: 30%;
+    border: 1px solid black;
 }
 .cart-item-title {
      height: 100%;
