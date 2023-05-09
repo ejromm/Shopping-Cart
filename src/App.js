@@ -9,7 +9,7 @@ import uniqid from 'uniqid';
 export default function App() {
   const [inventory, setInventory] = useState([]);
   const [cartClicked, setcartClicked] = useState(false);
-  
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     const retreiveInventory = async () => {
       try{
@@ -22,21 +22,21 @@ export default function App() {
    }
     retreiveInventory();
   }, []); 
-  console.log('inventory', inventory);
+  
   return (
     <>
     
-     <BrowserRouter>
-     {cartClicked ? <Cart /> : null}
+     <BrowserRouter key={uniqid()}>
+     {cartClicked ? <Cart cartClicked={cartClicked} setcartClicked={setcartClicked} cart={cart} setCart={setCart}  /> : null}
      <Header cartClicked={cartClicked} setcartClicked={setcartClicked} />
      <Routes>
      <Route  path='/home' element={<Home />}/>
      <Route  path='/shop' element={<Shop inventory={inventory} setInventory={setInventory} />} />
          {inventory.map((item) => {
            const name = item.title.replace(/[^A-Za-z0-9]/g, ' ')
-          console.log('id in app', item.id);
-          console.log('name in app', name.replace(/\s+/g, '-').trim())
-           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item}   /> } key={uniqid()} />)
+          
+        
+           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item} cart={cart} setCart={setCart}  /> } key={uniqid()} />)
          })}
     
      

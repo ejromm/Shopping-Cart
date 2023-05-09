@@ -19,8 +19,8 @@
     align-items: center;
     justify-content: center;
     padding-top: 2%;
-   
     border-radius: 5px;
+    text-decoration: none;
 }
 #item-img {
     height: 40%;
@@ -43,6 +43,7 @@
     justify-content: flex-start;
     font-family: 'Roboto';
     font-weight: 400;
+    
 }
 #item-name:hover {
     color: darkorange;

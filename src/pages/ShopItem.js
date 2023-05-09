@@ -4,8 +4,12 @@ import '../styles/ShopItem.css';
 import GetStars from "../Util/GetStars";
 import AddZeroes from "../Util/AddZeroes";
 
-export default function ShopItem({ item }) {
-    console.log('item', item);
+export default function ShopItem({ item, cart, setCart }) {
+    
+    function addToCart() {
+        setCart(cart.concat(item));
+        console.log('cart', cart);
+    }
 
     return (
       <div className="shop-item">
@@ -19,7 +23,7 @@ export default function ShopItem({ item }) {
               <span  id='shop-item-price'>${AddZeroes(String(item.price))}</span>  
               <span  id='shop-item-category'>Category:<i>{String(item.category)[0].toUpperCase() + String(item.category).slice(1)}</i></span>
               <span  id='shop-item-description'>{item.description}</span>
-              <button id='add-to-cart'>ADD TO CART</button>
+              <button onClick={()=> addToCart()} id='add-to-cart'>ADD TO CART</button>
           </div>
 
 
