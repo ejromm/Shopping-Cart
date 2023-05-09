@@ -5,16 +5,17 @@ import AddZeroes from "../Util/AddZeroes";
 export default function CartItem( {item} ) {
 
     function increaseValue() {
-        const controller = document.querySelector('#cart-controller'); 
+        const controller = document.getElementById(item.id); 
         controller.value ++; 
     }
    function decreaseValue() {
-        const controller = document.querySelector('#cart-controller'); 
+        const controller = document.getElementById(item.id); 
         controller.value --; 
        
     }
-
+   
     return (
+        
         <div className='cart-item'>
             <img src={item.image} alt='cart item img' id='cart-item-img' />
             <div className="cart-item-title">
@@ -23,7 +24,7 @@ export default function CartItem( {item} ) {
                         <button onClick={() => decreaseValue()} id='cart-decrease'>
                             <img alt="minus" src={Minus} />
                         </button>
-                        <input id="cart-controller" type="number" defaultValue={1}></input>
+                        <input className="cart-controller" id={item.id} type="number" defaultValue={1}></input>
                         <button onClick={() => increaseValue()} id='cart-increase'>
                             <img alt="minus" src={Plus} />
                         </button>

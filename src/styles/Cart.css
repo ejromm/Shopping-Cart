@@ -95,7 +95,7 @@
     justify-content: flex-start;
     align-items: center;
 }
-#cart-controller {
+.cart-controller {
     height: 70%;
     width: 30%;
     text-align: center;
@@ -104,8 +104,8 @@
     border: 1px solid gray;
    
 }
-#cart-controller::-webkit-inner-spin-button, 
-#cart-controller::-webkit-outer-spin-button { 
+.cart-controller::-webkit-inner-spin-button, 
+.cart-controller::-webkit-outer-spin-button { 
     -webkit-appearance: none;
     margin: 0;
 }
