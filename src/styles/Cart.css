@@ -5,12 +5,12 @@
     width: 30vw;
     height: 100vh;
     background-color: white;
-    
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
     gap: 3%;
+    overflow: scroll;
 }
 .cart h1 {
    
@@ -36,7 +36,8 @@
     justify-content: center;
 }
 #checkout-btn {
-    height: 100%;
+    min-height: 7vh;
+    height: 7vh;
     width: 60%;
     display: flex;
     align-items: center;
@@ -47,14 +48,16 @@
     letter-spacing: 2px;
     font-size: 1rem;
     font-weight: 500;
+    margin-bottom: 5%;
 }
 #checkout-btn:hover {
     background-color: black;
     color: white;
 }
 .cart-items-container {
-    min-height: 30vh;
+    
     width: 100%;
+    
 }
 .cart-item {
     height: 15vh;

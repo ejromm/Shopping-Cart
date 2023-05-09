@@ -2,7 +2,7 @@ import React from "react";
 import Plus from '../assets/plus.svg'; 
 import Minus from '../assets/minus.svg';
 import AddZeroes from "../Util/AddZeroes";
-export default function CartItem({item}) {
+export default function CartItem( {item} ) {
 
     function increaseValue() {
         const controller = document.querySelector('#cart-controller'); 
