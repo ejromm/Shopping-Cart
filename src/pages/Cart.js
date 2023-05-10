@@ -11,7 +11,17 @@ export default function Cart({cartClicked, setcartClicked, cart, setCart}) {
         setcartClicked(!cartClicked); 
         console.log(cartClicked);
      }
-     console.log('cart', cart);
+     function getTotal() {
+        let total = 0 ; 
+        if (cart.length === 1) total =  cart[0].total; 
+        else if(cart.length > 1) total = Number(Object.values(cart.reduce((a, b)  => ({x: a.total + b.total})))); 
+        return (
+            <span id='subtotal'>
+                {cart.length >= 1 ? 'Subtotal: $' + total : '' }
+            </span>
+        )
+     }
+     
     return (
         
         <div className='cart'>
@@ -21,10 +31,11 @@ export default function Cart({cartClicked, setcartClicked, cart, setCart}) {
                 {cart.map((item) => {
                     console.log(item);
                     return (
-                           <CartItem key={uniqid()} cart={cart} item={item} />
+                           <CartItem key={uniqid()}  cart={cart} item={item} />
                     )
                 })}
             </div>
+            {getTotal()}
             <div className='checkout-div'>
                 <button id='checkout-btn'>CHECKOUT</button>
             </div>

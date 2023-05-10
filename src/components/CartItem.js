@@ -2,14 +2,25 @@ import React from "react";
 import Plus from '../assets/plus.svg'; 
 import Minus from '../assets/minus.svg';
 import AddZeroes from "../Util/AddZeroes";
-export default function CartItem( {cart, item} ) {
+
+export default function CartItem( { cart, item} ) {
+    function updateTotal() {
+        let total = 0 ; 
+        if (cart.length === 1) total =  cart[0].total; 
+        else if(cart.length > 1) total = Number(Object.values(cart.reduce((a, b)  => ({x: a.total + b.total})))); 
+        document.getElementById('subtotal').textContent = cart.length >= 1 ? 'Subtotal: $' + total : '' ;
+    }
 
     function increaseValue() {
         const controller = document.getElementById(item.item.id); 
         controller.value ++; 
         const cartItem = cart.find(((x) => x.item.id === item.item.id)); 
         cartItem.quantity ++; 
-        console.log('cart', cart)
+        cartItem.total = item.item.price * item.quantity;
+        console.log('cart', cart); 
+        updateTotal(); 
+       
+    
     }
    function decreaseValue() {
         const controller = document.getElementById(item.item.id); 
@@ -17,11 +28,15 @@ export default function CartItem( {cart, item} ) {
         controller.value --; 
         const cartItem = cart.find(((x) => x.item.id === item.item.id)); 
         cartItem.quantity --; 
+        cartItem.total = item.item.price * item.quantity;
         if(cartItem.quantity <= 0 ) {
             cart.splice(cart.indexOf(cartItem), 1);
             cartCard.remove();
         }
-        console.log('cart', cart)
+        console.log('cart', cart);
+        updateTotal();
+        
+        
        
     }
    
@@ -35,7 +50,7 @@ export default function CartItem( {cart, item} ) {
                         <button onClick={() => decreaseValue()} id='cart-decrease'>
                             <img alt="minus" src={Minus} />
                         </button>
-                        <input className="cart-controller" id={item.item.id} type="number" defaultValue={1}></input>
+                        <input className="cart-controller" id={item.item.id} type="number" defaultValue={item.quantity}></input>
                         <button onClick={() => increaseValue()} id='cart-increase'>
                             <img alt="minus" src={Plus} />
                         </button>

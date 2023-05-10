@@ -7,7 +7,8 @@ import AddZeroes from "../Util/AddZeroes";
 export default function ShopItem({ item, cart, setCart }) {
     
     function addToCart() {
-        setCart(cart.concat({item: item, quantity: 1}));
+        
+        setCart(cart.concat({item: item, quantity: 1, total: item.price}));
         console.log('cart', cart);
     }
 
