@@ -45,3 +45,6 @@
     align-items: center;
     justify-content: center;
 }
+#shop-link {
+    text-decoration: none;
+}

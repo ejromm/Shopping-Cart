@@ -13,7 +13,7 @@ export default function Home() {
                 A mock e-commerce site<br/> in React. 
            </div>
            <div className='shop-btn-container'>
-                <Link to={'/shop'} page='shop'>SHOP NOW</Link>
+                <Link id='shop-link' to={'/shop'} page='shop'>SHOP NOW</Link>
            </div>
            
         </div>

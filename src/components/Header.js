@@ -15,9 +15,9 @@ export default function Header({cartClicked, setcartClicked}) {
     return (
         <>
          <div className='header'>
-          <span>FAKE STORE</span>
+          <span> <Link to={'/'} page='home'>FAKE STORE</Link></span>
           <nav>
-          <Link to={'/home'} page='home'>Home</Link>
+          <Link to={'/'} page='home'>Home</Link>
           <Link to={'/shop'} page='shop'>Shop</Link>
           <button onClick={() => changeCart()} >Cart</button>
           </nav>
