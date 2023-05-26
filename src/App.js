@@ -27,7 +27,7 @@ export default function App() {
     <>
     
      <BrowserRouter key={uniqid()}>
-     {cartClicked ? <Cart cartClicked={cartClicked} setcartClicked={setcartClicked} cart={cart} setCart={setCart}  /> : null}
+     <Cart cartClicked={cartClicked} setcartClicked={setcartClicked} cart={cart} setCart={setCart}  /> 
      <Header cartClicked={cartClicked} setcartClicked={setcartClicked} />
      <Routes>
      <Route  path='/' element={<Home />}/>
