@@ -3,12 +3,12 @@ import Plus from '../assets/plus.svg';
 import Minus from '../assets/minus.svg';
 import AddZeroes from "../Util/AddZeroes";
 
-export default function CartItem( { cart, item} ) {
+export default function CartItem( { cart, item } ) {
     function updateTotal() {
         let total = 0 ; 
         if (cart.length === 1) total =  cart[0].total; 
         else if(cart.length > 1) total = Number(Object.values(cart.reduce((a, b)  => ({x: a.total + b.total})))); 
-        document.getElementById('subtotal').textContent = cart.length >= 1 ? 'Subtotal: $' + total : '' ;
+        document.getElementById('subtotal').textContent = cart.length >= 1 ? 'Subtotal: $' + AddZeroes(total) : '' ;
     }
 
     function increaseValue() {
