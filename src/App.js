@@ -27,14 +27,14 @@ export default function App() {
     <>
     
      <BrowserRouter key={uniqid()}>
-     <Cart cartClicked={cartClicked} setcartClicked={setcartClicked} cart={cart} setCart={setCart}  /> 
+     <Cart cartClicked={cartClicked} setcartClicked={setcartClicked}  cart={cart} setCart={setCart}  /> 
      <Header cartClicked={cartClicked} setcartClicked={setcartClicked} />
      <Routes>
      <Route  path='/' element={<Home />}/>
      <Route  path='/shop' element={<Shop inventory={inventory} setInventory={setInventory} />} />
          {inventory.map((item) => {
            const name = item.title.replace(/[^A-Za-z0-9]/g, ' ')
-           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item} cart={cart} setCart={setCart}  /> } key={uniqid()} />)
+           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item} cart={cart} setCart={setCart} setcartClicked={setcartClicked}  /> } key={uniqid()} />)
          })}
     
      

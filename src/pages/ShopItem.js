@@ -1,14 +1,28 @@
 import React from "react";
 import '../styles/ShopItem.css'; 
-
 import GetStars from "../Util/GetStars";
 import AddZeroes from "../Util/AddZeroes";
-
-export default function ShopItem({ item, cart, setCart }) {
+export default function ShopItem({ item, cart, setCart}) {
     
     function addToCart() {
+        console.log('found?', cart.find(product => product.item.id === item.id )); 
+        if (cart.find(product => product.item.id === item.id ) !== undefined) {
+            
+            const newItem = cart.find(product => product.item.id === item.id); 
+            newItem.quantity += 1; 
+            newItem.total = newItem.item.price * newItem.quantity;
+            setCart([...cart]);
+
+           
+            
+            
+
+       
+        } else {
+            setCart(cart.concat({item: item, quantity: 1, total: item.price}));
+            
+        }
         
-        setCart(cart.concat({item: item, quantity: 1, total: item.price}));
         console.log('cart', cart);
     }
 

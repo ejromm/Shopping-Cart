@@ -3,22 +3,16 @@ import Plus from '../assets/plus.svg';
 import Minus from '../assets/minus.svg';
 import AddZeroes from "../Util/AddZeroes";
 
-export default function CartItem( { cart, item } ) {
-    function updateTotal() {
-        let total = 0 ; 
-        if (cart.length === 1) total =  cart[0].total; 
-        else if(cart.length > 1) total = Number(Object.values(cart.reduce((a, b)  => ({x: a.total + b.total})))); 
-        document.getElementById('subtotal').textContent = cart.length >= 1 ? 'Subtotal: $' + AddZeroes(total) : '' ;
-    }
-
+export default function CartItem( { cart, item, setCart } ) {
+   
     function increaseValue() {
         const controller = document.getElementById(item.item.id); 
         controller.value ++; 
         const cartItem = cart.find(((x) => x.item.id === item.item.id)); 
         cartItem.quantity ++; 
         cartItem.total = item.item.price * item.quantity;
-        console.log('cart', cart); 
-        updateTotal(); 
+        setCart([...cart]);
+        console.log(cart);
        
     
     }
@@ -32,9 +26,10 @@ export default function CartItem( { cart, item } ) {
         if(cartItem.quantity <= 0 ) {
             cart.splice(cart.indexOf(cartItem), 1);
             cartCard.remove();
+            
         }
-        console.log('cart', cart);
-        updateTotal();
+        setCart([...cart]);
+        console.log(cart)
         
         
        
