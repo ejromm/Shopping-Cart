@@ -34,7 +34,7 @@ export default function App() {
      <Route  path='/shop' element={<Shop inventory={inventory} setInventory={setInventory} />} />
          {inventory.map((item) => {
            const name = item.title.replace(/[^A-Za-z0-9]/g, ' ')
-           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item} cart={cart} setCart={setCart} setcartClicked={setcartClicked}  /> } key={uniqid()} />)
+           return (<Route path={`/shop/${name.replace(/\s+/g, '-').trim()}`} element={<ShopItem item={item} cart={cart} setCart={setCart} setcartClicked={setcartClicked}   /> } key={uniqid()} />)
          })}
     
      
