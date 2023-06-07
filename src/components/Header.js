@@ -14,14 +14,14 @@ export default function Header({cartClicked, setcartClicked}) {
 
     return (
         <>
-         <div className='header'>
-          <span> <Link to={'/'} page='home'>FAKE STORE</Link></span>
+         <header className='header'>
+          <Link className='home-link' to={'/'} page='home'>FAKE STORE</Link>
           <nav>
-          <Link to={'/'} page='home'>Home</Link>
-          <Link to={'/shop'} page='shop'>Shop</Link>
-          <button onClick={() => changeCart()} >Cart</button>
+          <Link className='nav-link' to={'/'} page='home'>Home</Link>
+          <Link className='nav-link' to={'/shop'} page='shop'>Shop</Link>
+          <button type='button' className='nav-btn' onClick={() => changeCart()} >Cart</button>
           </nav>
-         </div>
+         </header>
          
         </>
     )
