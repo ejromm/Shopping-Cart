@@ -7,10 +7,10 @@ export default function Home() {
         <>
         <div className='home'>
            <div className='home-header'>
-                We're<br/> A Fake<br/> Store.
+                We're<br className='line-break'/> A Fake<br className='line-break'/> Store.
            </div>
            <div className='home-header-2'>
-                A mock e-commerce site<br/> in React. 
+                A mock e-commerce site<br className='line-break'/> in React. 
            </div>
            <div className='shop-btn-container'>
                 <Link id='shop-link' to={'/shop'} page='shop'>SHOP NOW</Link>

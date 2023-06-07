@@ -5,15 +5,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
 }
 .home-header {
     color: white; 
     width: 30%;
-    height: 30vh;
+    height: 40vh;
     font-size: 4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding-left: 5%;
+
     
 }
 .home-header-2 {
@@ -23,7 +25,8 @@
     font-size: 1.2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding-left: 5%;
+
    
     
 }
@@ -33,6 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center; 
+   
 
 }
 .shop-btn-container a {
@@ -44,7 +48,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 #shop-link {
     text-decoration: none;
+}
+@media(max-width: 768px) {
+   
+    .home-header {
+        width: 100%;
+        font-size: 2.5rem;
+        justify-content: center;
+        padding-left: 0%;
+        
+    }
+    .home-header-2 {
+        width: 100%;
+        font-size: .9rem;
+        justify-content: center;
+        padding-left: 0%;
+    }
+    .line-break {
+        display: none;
+    }
+    .shop-btn-container a {
+        font-size: .7rem;
+    }
 }
