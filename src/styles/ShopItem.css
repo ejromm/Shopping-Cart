@@ -1,56 +1,44 @@
 .shop-item {
-    border: 1px solid black; 
+   
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
-    
 }
 .shop-item-left {
-     
     aspect-ratio: 1 / 1;
     width: 45%;
     max-height: 75%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 #shop-item-img {
-   
     max-width: 90%;
     height: 100%;
     object-fit: contain;
-    
 }
 #shop-item-title {
-   
     height: 25%;
     width: 100%;
     color: black;
-    font-size: 1.5rem;
+    font-size: clamp(.9rem, 1.5vw,1.5rem);
     font-family: 'Montserrat';
     letter-spacing: .2px;
     font-weight: 700;
     display: flex;
     align-items: flex-end;
-   
 }
 .shop-item-right {
-   
     aspect-ratio: 1 / 1;
     width: 45%;
     max-height: 75%;
-   
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-   
 }
 
 #shop-item-price {
@@ -88,6 +76,7 @@
     justify-content: flex-start;
     letter-spacing: .5px;
     margin-top: 2%;
+    margin-bottom: 2%;
   
 }
 #shop-item-category i {
@@ -97,22 +86,37 @@
 }
 #shop-item-description {
     color: black ;
-    font-size: .8rem;
-    height: 20%;
+    font-size: clamp(.6rem,.8vw,1.5rem);
     width: 100%;
     letter-spacing: .2px;
     font-family: 'Lato';
     display: flex;
     align-items: flex-start;
     margin-top: 2%;
-   
+
 }
 #add-to-cart {
     border: none;
     background-color: black;
     color: white;
-    height: 6vh;
-    width: 9vw;
+    height: 7vh;
+    width: 15vw;
     border-radius: 25px;
     font-family: 'Montserrat';
+    font-size: .8rem;
+    margin-top: 5%;
+}
+@media (max-width: 768px) {
+    .shop-item {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .shop-item-left, .shop-item-right {
+        max-height: 45%;
+        width: 80%;
+    }
+    #add-to-cart {
+        height: 50px;
+        width: 120px;
+    }
 }

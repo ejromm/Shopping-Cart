@@ -10,7 +10,7 @@ export default function Shop({inventory}) {
    
     return (
         <div className='store'>
-                {inventory.map((item, i ) => {
+                {inventory.map((item) => {
                     
                     return (
                         <ShopCard key={uniqid()} item={item} />

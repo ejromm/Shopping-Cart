@@ -24,7 +24,7 @@ export default function Header({cartClicked, setcartClicked}) {
              <span className='line-2'></span>
              <span className='line-3'></span>
           </button>
-          <nav onClick={() => setnavExtended(!navExtended)} className={navExtended ? 'nav-open' : ''}>
+          <nav onClick={() => setnavExtended(false)} className={navExtended ? 'nav-open' : ''}>
             <Link className='nav-link'  onClick={() => setnavExtended(!navExtended)} to={'/'} page='home'>Home</Link>
             <Link className='nav-link'  onClick={() => setnavExtended(!navExtended)} to={'/shop'} page='shop'>Shop</Link>
             <button type='button' className='nav-btn' onClick={() => changeCart()} >Cart</button>
