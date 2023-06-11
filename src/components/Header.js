@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import { Link } from 'react-router-dom'; 
 import '../styles/Header.css'; 
 
@@ -6,7 +6,9 @@ import '../styles/Header.css';
 export default function Header({cartClicked, setcartClicked}) {
     
     const [navExtended, setnavExtended] = useState(false);
-
+    useEffect(() => {
+       navExtended ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'scroll'; 
+    }, [navExtended])
     function changeCart() {
        setcartClicked(!cartClicked); 
        console.log(cartClicked);

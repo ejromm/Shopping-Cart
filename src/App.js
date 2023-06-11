@@ -17,7 +17,7 @@ export default function App() {
        const data = await response.json(); 
        setInventory(data);
       } catch(error) {
-           console.log(error);
+           console.error(error);
       }
    }
     retreiveInventory();

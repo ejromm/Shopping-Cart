@@ -103,7 +103,8 @@ nav {
         justify-content: center;
         background-color: black;
         color: white;
-        opacity: .8;
+        opacity: .75;
+        overflow: hidden;
     }
     .open-navbar-btn.active {
         transition: transform .5s ease, opacity ease .2s;

@@ -1,19 +1,14 @@
 
 .store {
-   
-    min-height: 300vh;
-    width: 100vw;
+    width: 80vw;
+    align-self: center;
     display: grid;
-    grid-template-columns: 25vw 25vw 25vw;
-    grid-template-rows: 45vh 45vh 45vh 45vh 45vh 45vh 45vh;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-gap: 10px;
     padding-top: 2%;
-   
-   
 }
 #shop-item {
-    width: 25vw;
-    height: 45vh;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,6 +16,7 @@
     padding-top: 2%;
     border-radius: 5px;
     text-decoration: none;
+    
 }
 #item-img {
     height: 40%;
@@ -64,7 +60,6 @@
     color: black;
     height: 15%;
     width: 90%;
-   
     font-size: 1rem;
     display: flex;
     flex-direction: row;
@@ -87,9 +82,6 @@
     
 
 }
-
-
-
 #add-to-cart:hover {
     border: .5px solid black;
     background-color: white;
