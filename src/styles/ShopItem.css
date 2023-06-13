@@ -1,5 +1,4 @@
 .shop-item {
-   
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -17,8 +16,8 @@
 }
 
 #shop-item-img {
-    max-width: 90%;
-    height: 100%;
+    max-width: 70%;
+    height: 80%;
     object-fit: contain;
 }
 #shop-item-title {
