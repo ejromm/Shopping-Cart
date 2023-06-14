@@ -18,15 +18,15 @@ export default function Header({cartClicked, setcartClicked}) {
     return (
         <>
          <header className='header'>
-          <Link className='home-link' to={'/'} page='home'>FAKE STORE</Link>
+          <Link className='home-link' to={'/Shopping-Cart'} page='home'>FAKE STORE</Link>
           <button className={navExtended ? 'open-navbar-btn active' :'open-navbar-btn'} onClick={() => setnavExtended(!navExtended)}>
              <span className='line-1'></span>
              <span className='line-2'></span>
              <span className='line-3'></span>
           </button>
           <nav onClick={() => setnavExtended(false)} className={navExtended ? 'nav-open' : ''}>
-            <Link className='nav-link'  onClick={() => setnavExtended(!navExtended)} to={'/'} page='home'>Home</Link>
-            <Link className='nav-link'  onClick={() => setnavExtended(!navExtended)} to={'/shop'} page='shop'>Shop</Link>
+            <Link className='nav-link'  onClick={() => setnavExtended(!navExtended)} to={'/Shopping-Cart'} page='home'>Home</Link>
+            <Link className='nav-link'  onClick={() => setnavExtended(!navExtended)} to={'/Shopping-Cart/shop'} page='shop'>Shop</Link>
             <button type='button' className='nav-btn' onClick={() => changeCart()} >Cart</button>
           </nav>
          </header>

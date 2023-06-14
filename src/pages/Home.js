@@ -13,7 +13,7 @@ export default function Home() {
                 A mock e-commerce site<br className='line-break'/> in React. 
            </div>
            <div className='shop-btn-container'>
-                <Link id='shop-link' to={'/shop'} page='shop'>SHOP NOW</Link>
+                <Link id='shop-link' to={'/Shopping-Cart/shop'} page='shop'>SHOP NOW</Link>
            </div>
            
         </div>

@@ -9,7 +9,7 @@ export default function ShopCard({ item }) {
         console.log('id in shopcard', item.id)
         console.log('name in shopcard', name.replace(/\s+/g, '-').trim())
     return (
-        <Link id='shop-item' to={`/shop/${name.replace(/\s+/g, '-').trim()}`} page={item.title} >
+        <Link id='shop-item' to={`/Shopping-Cart/shop/${name.replace(/\s+/g, '-').trim()}`} page={item.title} >
         <img id='item-img' alt={item.title} src={item.image} />
         <div className='item-price-cart' >
         <span  id='item-price'>${AddZeroes(String(item.price))}</span>  
